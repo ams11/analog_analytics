@@ -1,22 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WCAX: <%= @deal.proposition %></title>
- 
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-
-  <%= stylesheet_link_tag    "scoped_reset", :media => "all" %>
-  <%= stylesheet_link_tag    "wcax/assets/stylesheets/deals", :media => "all" %>
-
-  <script type="text/javascript">
-    var aaDealPath = '<%= deal_path @deal, :format => "json" %>';
-  </script>
-
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tag %>
+  <%= render :partial => 'shared/head', :locals => { :deal => @deal, :title_prefix => "WCAX: ", :style_sheet_path => "wcax/assets/stylesheets/deals" } %>
 
   <link rel="shortcut icon" href="images/favicon.ico">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">

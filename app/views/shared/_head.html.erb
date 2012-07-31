@@ -1,0 +1,16 @@
+  <title><%= "#{title_prefix}#{deal.proposition unless deal.nil?}" %></title>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+
+  <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
+  <%= stylesheet_link_tag    style_sheet_path, :media => "all" %>
+
+  <script type="text/javascript">
+    var aaDealPath = '<%= deal_path(deal, :format => "json") unless deal.nil? %>;';
+  </script>
+
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>

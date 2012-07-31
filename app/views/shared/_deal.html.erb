@@ -1,0 +1,32 @@
+<%
+   proposition = ""
+   value = ""
+   price = ""
+   end_at = ""
+   description = ""
+   inventory = ""
+   unless deal.nil?
+       proposition = deal.proposition
+       value = deal.value
+       price = deal.price
+       end_at = deal.end_at.to_s(:long) unless deal.end_at.nil?
+       description = deal.description
+       inventory = deal.inventory
+   end
+%>
+
+<p id="notice"><%= notice %></p>
+
+<img src="http://s3.amazonaws.com/photos.daily-deals.analoganalytics.com/development/59762/standard.png"/>
+
+<h1><%= proposition %></h1>
+
+<h2>$<%= value %> Value for Only $<%= price %></h2>
+
+<h3>Deal ends at <%= end_at %></h3>
+
+<p>
+  <%= description %>
+</p>
+
+<h3>Only <span class="inventory"><%= inventory %></span> Left</h3>
